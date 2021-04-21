@@ -22,22 +22,24 @@
         <h1>My slider</h1>
 
         <!-- SLIDER -->
-        <div class="slider">
+        <div @mouseenter="breakAutoSkip" @mouseleave="autoSkip" class="slider" >
 
             <!-- TASTO PREV -->
-            <div class="prev"><i class="fas fa-step-backward"></i></div>
+            <div class="prev" @click="skipPrev"><i class="fas fa-step-backward"></i></div>
             <!-- TASTO NEXT -->
-            <div class="next"><i class="fas fa-step-forward"></i></div>
+            <div class="next" @click="skipNext"><i class="fas fa-step-forward"></i></div>
 
             <!-- IMG -->
             <img :src="img[index]" alt="">
 
             <!-- SELECTOR -->
             <div class="selector">
-                <i class="fas fa-circle active"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+            <i
+                class="fas fa-circle" 
+                v-for="(element, i) in img"
+                :class="{active: i == index}"
+                @click="selector(i)">
+            </i>
             </div>
         </div>
 

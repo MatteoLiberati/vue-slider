@@ -1,7 +1,7 @@
 const app = new Vue({
     el: "#app",
     created(){
-       
+       this.autoSkip();
     },
     data: {
         img:[
@@ -15,9 +15,32 @@ const app = new Vue({
             'https://cdn.pixabay.com/photo/2020/04/24/20/27/computer-5088593__340.jpg',
         ],
         index: 0,
+        skip: 0,
     },
     methods: {
-
+        skipNext(){
+            this.index ++;
+            if(this.index > this.img.length -1){
+                this.index = 0;
+            }
+        },
+        skipPrev(){
+            this.index --;
+            if(this.index < 0){
+                this.index = this.img.length -1;
+            }
+        },
+        selector(i){
+            this.index = i;
+        },
+        autoSkip(){
+            this.skip = setInterval(()=>{
+                this.skipNext();
+            }, 3000)
+        },
+        breakAutoSkip(){
+            clearInterval(this.skip)
+        },
     },
 // END VUE APP
-});
+})
