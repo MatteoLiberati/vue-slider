@@ -6,18 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FONT-AWESOME -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
-    <!-- LINK VUE -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- LINK GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <!-- LINK CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <title>Slider</title>
+    <!-- LINK VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>My Slider</title>
 </head>
 <body>
     <!-- APP - VUE -->
     <div id="app">
+        <!-- TITLE -->
+        <h1>My slider</h1>
 
-       
+        <!-- SLIDER -->
+        <div class="slider">
 
+            <!-- TASTO PREV -->
+            <div class="prev"><i class="fas fa-step-backward"></i></div>
+            <!-- TASTO NEXT -->
+            <div class="next"><i class="fas fa-step-forward"></i></div>
+
+            <!-- IMG -->
+            <img :src="img[index]" alt="">
+
+            <!-- SELECTOR -->
+            <div class="selector">
+                <i class="fas fa-circle active"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+            </div>
+        </div>
+
+        <!-- END APP -->
     </div>
     <!-- JS -->
     <script src="./js/script.js"></script>
