@@ -37,9 +37,11 @@ const app = new Vue({
             this.skip = setInterval(()=>{
                 this.skipNext();
             }, 3000)
+            this.$refs.slider.blur();
         },
         breakAutoSkip(){
             clearInterval(this.skip)
+            this.$refs.slider.focus();
         },
     },
 // END VUE APP

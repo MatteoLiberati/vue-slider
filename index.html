@@ -22,7 +22,14 @@
         <h1>My slider</h1>
 
         <!-- SLIDER -->
-        <div @mouseenter="breakAutoSkip" @mouseleave="autoSkip" class="slider" >
+        <div 
+        @mouseenter="breakAutoSkip" 
+        @mouseleave="autoSkip" 
+        class="slider" 
+        tabindex="-1"
+        @keyup.left="skipPrev"
+        @keyup.right="skipNext"
+        ref="slider">
 
             <!-- TASTO PREV -->
             <div class="prev" @click="skipPrev"><i class="fas fa-step-backward"></i></div>
